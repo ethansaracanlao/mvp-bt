@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Baon Tracker</title>
+<meta name="description" content="Track your daily baon balance and expenses.">
+
+<!-- PWA / Add to Home Screen -->
+<link rel="baon" href="baon.json">
+<meta name="theme-color" content="#B8E3D3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Baon">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="app-header">
+    <h1 class="app-title">Baon<span class="dot">.</span></h1>
+    <button class="reset-btn" id="resetBtn" type="button">Reset</button>
+  </div>
+
+  <div class="balance-card">
+    <p class="balance-label">Your balance</p>
+    <p class="balance-amount"><span class="peso">₱</span><span id="balanceValue">0.00</span></p>
+    <div class="balance-sub">
+      <div class="balance-sub-item">Spent today<strong id="spentToday">₱0.00</strong></div>
+      <div class="balance-sub-item">Expenses<strong id="expenseCount">0</strong></div>
+    </div>
+    <div class="set-balance-row">
+      <input type="number" id="setBalanceInput" placeholder="Set starting balance" min="0" step="0.01" inputmode="decimal">
+      <button id="setBalanceBtn" type="button">Set</button>
+    </div>
+  </div>
+
+  <button class="add-btn" id="openModalBtn" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    Add expense
+  </button>
+
+  <div class="expenses-section">
+    <div class="expenses-heading">
+      <h2>Expenses</h2>
+      <span id="expensesHint">today</span>
+    </div>
+    <ul class="expense-list" id="expenseList"></ul>
+    <div class="empty-state" id="emptyState">
+      <span class="emoji">🧺</span>
+      <p>No expenses yet. Tap "Add expense" to log your first one.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>Add an expense</h2>
+    <div class="modal-warning" id="modalWarning">This expense is more than your current balance.</div>
+    <div class="field">
+      <label for="expenseName">What was it for?</label>
+      <input type="text" id="expenseName" placeholder="e.g. Bills, Food, Travel" maxlength="40">
+    </div>
+    <div class="field">
+      <label for="expenseAmount">Amount</label>
+      <input type="number" id="expenseAmount" placeholder="0.00" min="0" step="0.01" inputmode="decimal">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelBtn" type="button">Cancel</button>
+      <button class="btn-confirm" id="confirmBtn" type="button">Add expense</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
