@@ -80,10 +80,10 @@
 
   function pickEmoji(name) {
     const n = name.toLowerCase();
-    if (/(jeep|tricycle|bus|grab|fare|uber|taxi)/.test(n)) return '🚌';
-    if (/(food|lunch|rice|jollibee|mcdo|eat|snack|merienda|coffee|milktea)/.test(n)) return '🍔';
+    if (/(jeep|tricycle|bus|grab|fare|uber|taxi|commute)/.test(n)) return '🚌';
+    if (/(food|lunch|dinner|rice|jollibee|mcdo|eat|snack|merienda|coffee|milktea)/.test(n)) return '🍔';
     if (/(load|data|wifi|internet)/.test(n)) return '📶';
-    if (/(school|book|pen|notebook|project)/.test(n)) return '📚';
+    if (/(school|book|pen|notebook|project|school supplies|supplies)/.test(n)) return '📚';
     if (/(game|movie|shop|clothes)/.test(n)) return '🛍️';
     return '💸';
   }
