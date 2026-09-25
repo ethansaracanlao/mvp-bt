@@ -80,7 +80,7 @@
 
   function pickEmoji(name) {
     const n = name.toLowerCase();
-    
+
     // Bills & Utilities
     if (/\b(meralco|electricity|electric|water bill|maynilad|manilad|rent|bill|bills|hoa|dues)\b/.test(n)) return '🏠';
     
@@ -112,7 +112,7 @@
     if (/\b(food|lunch|dinner|breakfast|rice|jollibee|mcdo|kfc|tokyo tokyo|eat|snack|merienda|dine)\b/.test(n)) return '🍔';
 
     // School & Office
-    if (/\b(school|book|pen|notebook|project|school supplies|supplies|tuition)\b/.test(n)) return '📚';
+    if (/\b(school|book|ballpen|pen|notebook|project|school supplies|supplies|tuition)\b/.test(n)) return '📚';
 
     // Subscriptions & Digital
     if (/\b(netflix|spotify|youtube|disney|apple|google play|subscription|iCloud)\b/.test(n)) return '📺';
