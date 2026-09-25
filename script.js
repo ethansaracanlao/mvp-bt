@@ -80,11 +80,46 @@
 
   function pickEmoji(name) {
     const n = name.toLowerCase();
-    if (/(jeep|tricycle|bus|grab|fare|uber|taxi|commute)/.test(n)) return '🚌';
-    if (/(food|lunch|dinner|rice|jollibee|mcdo|eat|snack|merienda|coffee|milktea)/.test(n)) return '🍔';
-    if (/(load|data|wifi|internet)/.test(n)) return '📶';
-    if (/(school|book|pen|notebook|project|school supplies|supplies)/.test(n)) return '📚';
-    if (/(game|movie|shop|clothes)/.test(n)) return '🛍️';
+    
+    // Bills & Utilities
+    if (/\b(meralco|electricity|electric|water bill|maynilad|manilad|rent|bill|bills|hoa|dues)\b/.test(n)) return '🏠';
+    
+    // Transport & Commute
+    if (/\b(jeep|tricycle|bus|grab|fare|uber|taxi|commute|lrt|mrt|angkas|joyride|moveit)\b/.test(n)) return '🚌';
+    
+    // Fuel & Vehicle
+    if (/\b(gas|gasoline|petrol|shell|petron|caltex|seaoil|parking|toll|rfid|easytrip|autosweep|car wash)\b/.test(n)) return '⛽';
+
+    // Groceries & Market
+    if (/\b(grocery|groceries|supermarket|palengke|mart|puregold|savemore|dali|7-eleven|uncle johns)\b/.test(n)) return '🛒';
+
+    // Health, Pharmacy & Personal Care
+    if (/\b(pharmacy|mercury drug|watsons|medicine|meds|doctor|clinic|hospital|skincare|soap|shampoo)\b/.test(n)) return '💊';
+
+    // Coffee & Hot Drinks (Placed before general drinks)
+    if (/\b(latte|cappuccino|espresso|coffee|café|cafe|starbucks)\b/.test(n)) return '☕️';
+
+    // Cold Drinks & Beverages
+    if (/\b(drinks|soda|milktea|water|beer|wine|juice|cola|boba)\b/.test(n)) return '🥤';
+
+    // Fitness & Energy
+    if (/\b(gatorade|protein bar|pocari sweat|electrolytes|energy gel|gym|fitness)\b/.test(n)) return '⚡️';
+
+    // Telecom & Data
+    if (/\b(load|data|wifi|internet|pldt|globe|smart|converge|dito)\b/.test(n)) return '📶';
+
+    // Food & Dining
+    if (/\b(food|lunch|dinner|breakfast|rice|jollibee|mcdo|kfc|tokyo tokyo|eat|snack|merienda|dine)\b/.test(n)) return '🍔';
+
+    // School & Office
+    if (/\b(school|book|pen|notebook|project|school supplies|supplies|tuition)\b/.test(n)) return '📚';
+
+    // Subscriptions & Digital
+    if (/\b(netflix|spotify|youtube|disney|apple|google play|subscription|iCloud)\b/.test(n)) return '📺';
+
+    // Shopping & Entertainment
+    if (/\b(game|movie|shop|clothes|shopee|lazada|shopping|mall)\b/.test(n)) return '🛍️';
+
     return '💸';
   }
 
