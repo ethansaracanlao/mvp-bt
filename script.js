@@ -31,7 +31,7 @@
         }
       }
     } catch (e) { /* fall through to default */ }
-    return { balance: 500, expenses: [] };
+    return { balance: 0, expenses: [] };
   }
 
   function saveState() {
@@ -140,7 +140,7 @@
   // Reset everything
   els.resetBtn.addEventListener('click', () => {
     if (confirm('Reset balance and clear all expenses?')) {
-      state = { balance: 500, expenses: [] };
+      state = { balance: 0, expenses: [] };
       saveState();
       render();
     }
